@@ -9,6 +9,7 @@ import geopandas as gpd
 from shapely.geometry import LineString
 import math
 import time
+import os 
 
 # %% FUNCTIONS
 def graph_from_SwmmInput(sw_in):
@@ -222,6 +223,9 @@ print(f'Convergence criteria satisfied (cov = {avg_cov()}) after {cur_N} simulat
 print(f'Elapsed time: {end_time-start_time}.')
     
 # %% SAVE OUTPUT
+if not os.path.isdir('outputs'):
+    os.mkdir('outputs')
+    
 # Save node gdf
 nodes_gdf.to_file('./outputs/nodes')
 

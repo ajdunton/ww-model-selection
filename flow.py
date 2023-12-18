@@ -378,6 +378,9 @@ end_time = time.time()
 print(f'Convergence criteria satisfied (cov = {avg_cov()}) after {cur_N} simulations.')
 print(f'Elapsed time: {end_time-start_time}.')
 # %% SAVE OUTPUT
+if not os.path.isdir('outputs'):
+    os.mkdir('outputs')
+    
 # Save node gdf
 nodes_gdf.to_file('./outputs/nodes')
 
