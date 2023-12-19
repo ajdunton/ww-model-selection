@@ -34,7 +34,7 @@ Both connectivity.py and flow.py produce two outputs that define the network:
     * node: node index
     * N: number of simulations completed
     * pm_avg: average performance measure over the simulations
-    * pm_200, pm_201, ..., pm_299: performance measures for the last 100 simulations 
+    * pm_200, pm_201, ..., pm_299: performance measures for the last 100 simulations (i.e., the list here would be included if N = 300)
 * ./outputs/edges/edges.shp: edges shapefile that includes the following attributes for each edge
     * from: node index of the source node of the edge
     * to: node index of the destination node of the edge
