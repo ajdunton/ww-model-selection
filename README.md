@@ -21,14 +21,23 @@ The analysis starts from an existing SWMM model representing the undamaged netwo
 |CA|Arterial Network|Connectivity Analysis|connectivity.py|./inputs/arterial_kinwave **or** ./inputs/arterial_dynwave|
 
 # Specifying the Damage Probabilities
-The damage probabilities for each type of component are specified as follows. 
+The damage probabilities for each type of component are specified as inputs in connectivity.py and flow.py. For connectivity.py, components are either considered fully functionally or fully damaged. As such, the failure probabilities of pumps, tanks, and pipes are specified as follows:
+* PF_PUMP = 0.1
+* PF_TANK = 0.1
+* PF_PIPE = 0.01
 
-Note that the partial damage (i.e., part
+Flow analysis allows us to additionally model partial damage to the components. Specifically, we model partial damage to the pipes by reducing their flow capacity (i.e., diameter). In the flow script, the probability of damage to the pipes is represented by PF_PIPE. PF_PUMP and PF_TANK are the same as above. For flow.py, PF_PIPE is a list of tuples, where each tuple in the list represents a damage state. The first value in each tuple is the fraction of the flow that is able to pass through the pipe in the corresponding damage state; the second value in each tuple is the probability of the corresponding damage state.
 
 # Outputs
-Both scripts produce two outputs that define the network:
-* ./outputs/nodes/nodes.shp: nodes shapefile that includes the following attributes
-* ./outputs/edges/edges.shp: edges shapefile that includes the following attributes
+Both connectivity.py and flow.py produce two outputs that define the network:
+* ./outputs/nodes/nodes.shp: nodes shapefile that includes the following attributes for each node
+    * node: node index
+    * N: number of simulations completed
+    * pm_avg: average performance measure over the simulations
+    * pm_200, pm_201, ..., pm_299: performance measures for the last 100 simulations 
+* ./outputs/edges/edges.shp: edges shapefile that includes the following attributes for each edge
+    * from: node index of the source node of the edge
+    * to: node index of the destination node of the edge
 
 # Reference
  Dunton, A. (2023). Model selection for risk analysis of wastewater networks. https://doi.org/10.48550/arXiv.2312.06623
