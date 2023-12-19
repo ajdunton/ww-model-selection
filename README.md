@@ -3,9 +3,9 @@ This repository includes code for simulating the effect of component damage on t
 * flow.py: uses flow analysis (specifically SWMM) for functionality assessment
 * connectivity.py: uses connectivity analysis for functionality assessment
 
-In both cases, simulations continue until [convergence criteria] is met.
+For each of these cases, a performance measure (PM) is used to describe the loss of functionality to each node. PM ranges from 0 to 1, where 1 is no loss of functionality and 0 is complete loss of functionality. See Dunton (2023) for the formulation of PM for connectivity analysis and flow analysis. 
 
-[Performance Measure]
+Each node has a deterministic value of PM for each simulation of the damage. That is, the simulations are mapping the uncertainty in the damage state of components to the uncertainty in the value of the nodal PM. To determine the number of simulations to use, a convergence criterion is used. Here, the simulations continue until the average coefficient of variation (COV) of the estimate of PM over the nodes is less than 0.1. See Dunton (2023) for more information. The convergence criteria is checked every 100 simulations, and some information is printed to the terminal. Once the convergence criteria is met, the total simulation time and final average COV of PM are also printed to the terminal.
 
 # Specifying the Input Model
 The analysis starts from an existing SWMM model representing the undamaged network. This model should be included in ./inputs/, and the path to this model must be specified in connectivity.py or flow.py as INP_PATH. This repository includes 4 example SWMM models that were used to generate the results in Dunton (2023). By running simulations for 2 model granularities and 3 model fidelities, Dunton (2023) assesses the necessary granularity and fidelity for accurate risk analysis of wastewater networks. The following table summarizes the experimental design and how the files in this repository were used to generate the results:
