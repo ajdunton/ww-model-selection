@@ -1,4 +1,6 @@
-# ww-model-selection
+# Wastewater Model Selection (ww-model-selection)
+Author: Aaron Dunton (ajdunton@gmail.com)
+
 This repository includes code for simulating the effect of component damage on the functionality of wastewater networks. Specifically, two methods are used for assessing the functionality, with two corresponding scripts here:
 * flow.py: flow analysis (specifically SWMM) for functionality assessment
 * connectivity.py: connectivity analysis for functionality assessment
