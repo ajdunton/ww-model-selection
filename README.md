@@ -26,7 +26,7 @@ The damage probabilities for each type of component are specified as inputs in c
 * PF_TANK = 0.1
 * PF_PIPE = 0.01
 
-Flow analysis allows us to additionally model partial damage to the components. Specifically, we model partial damage to the pipes by reducing their flow capacity (i.e., diameter). In the flow script, PF_PIPE is a list of tuples, where each tuple in the list represents a damage state. The first value in each tuple is the fraction of the flow that is able to pass through the pipe in the corresponding damage state; the second value in each tuple is the probability of the corresponding damage state. The probability of failure of pumps and tanks are specified the same as above (i.e., PF_PUMP and PF_TANK).
+Flow analysis allows us to additionally model partial damage to the components. Specifically, we model partial damage to the pipes by reducing their flow capacity (i.e., diameter). In flow.py, PF_PIPE is a list of tuples, where each tuple in the list represents a damage state. The first value in each tuple is the fraction of the flow that is able to pass through the pipe in the corresponding damage state; the second value in each tuple is the probability of the corresponding damage state. The probability of failure of pumps and tanks are specified the same as above (i.e., PF_PUMP and PF_TANK).
 
 # Outputs
 Both connectivity.py and flow.py produce two outputs that define the network:
