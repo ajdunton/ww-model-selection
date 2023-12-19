@@ -19,8 +19,11 @@ The analysis starts from an existing SWMM model representing the undamaged netwo
 |DA|Arterial Network|Flow Analysis, Dynamic Wave Routing|flow.py|./inputs/arterial_dynwave|
 |KA|Arterial Network|Flow Analysis, Kinematic Wave Routing|flow.py|./inputs/arterial_kinwave|
 |CA|Arterial Network|Connectivity Analysis|connectivity.py|./inputs/arterial_kinwave **or** ./inputs/arterial_dynwave|
-# Specifying the Damage Probabilities
 
+# Specifying the Damage Probabilities
+The damage probabilities for each type of component are specified as follows. 
+
+Note that the partial damage (i.e., part
 
 # Outputs
 Both scripts produce two outputs that define the network:
