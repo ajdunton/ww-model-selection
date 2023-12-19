@@ -1,7 +1,7 @@
 # ww-model-selection
 This repository includes code for simulating the effect of component damage on the functionality of wastewater networks. Specifically, two methods are used for assessing the functionality, with two corresponding scripts here:
-* flow.py: uses flow analysis (specifically SWMM) for functionality assessment
-* connectivity.py: uses connectivity analysis for functionality assessment
+* flow.py: flow analysis (specifically SWMM) for functionality assessment
+* connectivity.py: connectivity analysis for functionality assessment
 
 For each of these cases, a performance measure (PM) is used to describe the loss of functionality to each node. PM ranges from 0 to 1, where 1 is no loss of functionality and 0 is complete loss of functionality. See Dunton (2023) for the formulation of PM for connectivity analysis and flow analysis. 
 
