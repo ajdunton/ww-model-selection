@@ -23,7 +23,7 @@ The analysis starts from an existing SWMM model representing the undamaged netwo
 |CA|Arterial Network|Connectivity Analysis|connectivity.py|./inputs/arterial_kinwave **or** ./inputs/arterial_dynwave|
 
 # Specifying the Damage Probabilities
-The damage probabilities for each type of component are specified as inputs in connectivity.py and flow.py. For connectivity.py, components are either considered fully functionally or fully damaged. As such, the failure probabilities of pumps, tanks, and pipes are specified as follows:
+The damage probabilities for each type of component are specified as inputs in connectivity.py and flow.py. For connectivity.py, components are either considered fully functional or fully damaged. As such, the failure probabilities of pumps, tanks, and pipes are specified as follows:
 * PF_PUMP = 0.1
 * PF_TANK = 0.1
 * PF_PIPE = 0.01
